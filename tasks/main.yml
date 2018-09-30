@@ -20,6 +20,8 @@
   template:
     src: redis.conf.j2
     dest: "{{ redis_configuration_directory }}/redis.conf"
+  notify:
+    - restart software
 
 - name: install software
   package:
@@ -31,3 +33,5 @@
     name: redis
     state: started
     enabled: true
+  when:
+    - ansible_virtualization_type != "docker"

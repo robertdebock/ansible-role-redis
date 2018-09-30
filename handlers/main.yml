@@ -1,2 +1,6 @@
 ---
 # handlers file for redis
+- name: restart software
+  service:
+    name: redis
+    state: restarted
