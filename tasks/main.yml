@@ -25,7 +25,7 @@
 
 - name: install software
   package:
-    name: redis
+    name: "{{ redis_package }}"
     state: present
 
 - name: start and enable software
