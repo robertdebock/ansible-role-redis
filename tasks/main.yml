@@ -1,0 +1,33 @@
+---
+# tasks file for redis
+- name: load default variables
+  include_vars:
+    file: default.yml
+
+- name: load os-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - default.yml
+
+- name: create redis configuration directory
+  file:
+    path: "{{ redis_configuration_directory }}"
+    state: directory
+
+- name: configure software
+  template:
+    src: redis.conf.j2
+    dest: "{{ redis_configuration_directory }}/redis.conf"
+
+- name: install software
+  package:
+    name: redis
+    state: present
+
+- name: start and enable software
+  service:
+    name: redis
+    state: started
+    enabled: true
