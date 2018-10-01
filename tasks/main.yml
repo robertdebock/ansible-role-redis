@@ -28,6 +28,13 @@
     name: "{{ redis_package }}"
     state: present
 
+- name: configure software
+  template:
+    src: redis.conf.j2
+    dest: "{{ redis_configuration_directory }}/redis.conf"
+  notify:
+    - restart software
+
 - name: start and enable software
   service:
     name: redis
