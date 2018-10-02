@@ -2,3 +2,4 @@
 # vars file for redis
 redis_package: redis-server
 redis_configuration_directory: /etc/redis
+redis_service: redis-server
