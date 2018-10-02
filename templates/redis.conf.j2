@@ -192,7 +192,7 @@ databases 16
 #
 # However it is possible to force the pre-4.0 behavior and always show a
 # ASCII art logo in startup logs by setting the following option to yes.
-always-show-logo yes
+# always-show-logo yes
 
 ################################ SNAPSHOTTING  ################################
 #
@@ -645,10 +645,10 @@ slave-priority 100
 # in order to instead release memory in a non-blocking way like if UNLINK
 # was called, using the following configuration directives:
 
-lazyfree-lazy-eviction no
-lazyfree-lazy-expire no
-lazyfree-lazy-server-del no
-slave-lazy-flush no
+#lazyfree-lazy-eviction no
+#lazyfree-lazy-expire no
+#lazyfree-lazy-server-del no
+#slave-lazy-flush no
 
 ############################## APPEND ONLY MODE ###############################
 
@@ -780,7 +780,7 @@ aof-load-truncated yes
 #
 # This is currently turned off by default in order to avoid the surprise
 # of a format change, but will at some point be used as the default.
-aof-use-rdb-preamble no
+#aof-use-rdb-preamble no
 
 ################################ LUA SCRIPTING  ###############################
 
