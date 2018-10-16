@@ -1,8 +1,10 @@
 ---
 # handlers file for redis
-- name: restart software
+- name: restart redis
   service:
-    name: redis
+    name: "{{ redis_service[ansible_distribution]
+          | default(redis_service['default']) }}"
+
     state: restarted
   when:
     - ansible_virtualization_type != "docker"

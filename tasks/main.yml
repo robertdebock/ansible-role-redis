@@ -1,43 +1,37 @@
 ---
 # tasks file for redis
-- name: load default variables
-  include_vars:
-    file: default.yml
-
-- name: load os-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
-    - "{{ ansible_distribution }}.yml"
-    - default.yml
-
 - name: create redis configuration directory
   file:
-    path: "{{ redis_configuration_directory }}"
+    path: "{{ redis_configuration_directory[ansible_distribution]
+          | default(redis_configuration_directory['default']) }}"
     state: directory
 
-- name: configure software
+- name: configure redis
   template:
     src: redis.conf.j2
-    dest: "{{ redis_configuration_directory }}/redis.conf"
+    dest: "{{ redis_configuration_directory[ansible_distribution]
+          | default(redis_configuration_directory['default']) }}/redis.conf"
   notify:
-    - restart software
+    - restart redis
 
-- name: install software
+- name: install redis
   package:
-    name: "{{ redis_package }}"
-    state: present
+    name: "{{ redis_packages[ansible_distribution]
+          | default(redis_packages['default']) }}"
+    state: "{{ redis_package_state }}"
 
-- name: configure software
+- name: configure redis again
   template:
     src: redis.conf.j2
-    dest: "{{ redis_configuration_directory }}/redis.conf"
+    dest: "{{ redis_configuration_directory[ansible_distribution]
+          | default(redis_configuration_directory['default']) }}"
   notify:
-    - restart software
+    - restart redis
 
-- name: start and enable software
+- name: start and enable redis
   service:
-    name: "{{ redis_service }}"
+    name: "{{ redis_service[ansible_distribution]
+          | default(redis_service['default']) }}"
     state: started
     enabled: true
   when:

@@ -1,5 +1,0 @@
----
-# vars file for redis
-redis_package: redis
-redis_configuration_directory: /etc
-redis_service: redis

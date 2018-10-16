@@ -1,0 +1,21 @@
+---
+# vars file for redis
+redis_packages:
+  default:
+    - redis
+  Debian:
+    - redis-server
+  Ubuntu:
+    - redis-server
+
+redis_configuration_directory:
+  default: /etc
+  Debian: /etc/redis
+  Ubuntu: /etc/redis
+  openSUSE Leap: /etc/redis
+  openSUSE Tumbleweed: /etc/redis
+
+redis_service:
+  default: redis
+  Debian: redis-server
+  Ubuntu: redis-server
