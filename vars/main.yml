@@ -1,6 +1,15 @@
 ---
 # vars file for redis
-redis_packages:
+_redis_configuration_directory:
+  default: /etc
+  Debian: /etc/redis
+  Ubuntu: /etc/redis
+  openSUSE Leap: /etc/redis
+  openSUSE Tumbleweed: /etc/redis
+
+redis_configuration_directory: "{{ _redis_configuration_directory[ansible_distribution] | default(_redis_configuration_directory['default']) }}"
+
+_redis_packages:
   default:
     - redis
   Debian:
@@ -8,14 +17,11 @@ redis_packages:
   Ubuntu:
     - redis-server
 
-redis_configuration_directory:
-  default: /etc
-  Debian: /etc/redis
-  Ubuntu: /etc/redis
-  openSUSE Leap: /etc/redis
-  openSUSE Tumbleweed: /etc/redis
+redis_packages: "{{ _redis_packages[ansible_distribution] | default(_redis_packages['default']) }}"
 
-redis_service:
+_redis_service:
   default: redis
   Debian: redis-server
   Ubuntu: redis-server
+
+redis_service: "{{ _redis_service[ansible_distribution] | default(_redis_service['default']) }}"

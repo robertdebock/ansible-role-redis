@@ -2,36 +2,31 @@
 # tasks file for redis
 - name: create redis configuration directory
   file:
-    path: "{{ redis_configuration_directory[ansible_distribution]
-          | default(redis_configuration_directory['default']) }}"
+    path: "{{ redis_configuration_directory }}"
     state: directory
 
 - name: configure redis
   template:
     src: redis.conf.j2
-    dest: "{{ redis_configuration_directory[ansible_distribution]
-          | default(redis_configuration_directory['default']) }}/redis.conf"
+    dest: "{{ redis_configuration_directory }}/redis.conf"
   notify:
     - restart redis
 
 - name: install redis
   package:
-    name: "{{ redis_packages[ansible_distribution]
-          | default(redis_packages['default']) }}"
+    name: "{{ redis_packages }}"
     state: "{{ redis_package_state }}"
 
 - name: configure redis again
   template:
     src: redis.conf.j2
-    dest: "{{ redis_configuration_directory[ansible_distribution]
-          | default(redis_configuration_directory['default']) }}"
+    dest: "{{ redis_configuration_directory }}/redis.conf"
   notify:
     - restart redis
 
 - name: start and enable redis
   service:
-    name: "{{ redis_service[ansible_distribution]
-          | default(redis_service['default']) }}"
+    name: "{{ redis_service }}"
     state: started
     enabled: true
   when:

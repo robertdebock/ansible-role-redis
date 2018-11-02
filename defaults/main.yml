@@ -1,6 +1,5 @@
 ---
 # defaults file for redis
-# redis_parameter: value
 
 # To update all packages installed by this roles, set `redis_package_state` to `latest`.
 redis_package_state: present
