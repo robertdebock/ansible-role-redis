@@ -1,1 +1,0 @@
-Provides redis for your system.

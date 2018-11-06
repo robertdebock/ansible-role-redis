@@ -3,8 +3,7 @@ redis
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-redis.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-redis)
 
-Provides redis for your system.
-
+The purpose of this role is to install and configure redis on your system.
 
 Example Playbook
 ----------------
