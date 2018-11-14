@@ -22,6 +22,8 @@ redis_packages: "{{ _redis_packages[ansible_distribution] | default(_redis_packa
 _redis_service:
   default: redis
   Debian: redis-server
+  openSUSE Leap: redis@default
+  openSUSE Tumbleweed: redis@default
   Ubuntu: redis-server
 
 redis_service: "{{ _redis_service[ansible_distribution] | default(_redis_service['default']) }}"
