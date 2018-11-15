@@ -5,22 +5,24 @@
     path: "{{ redis_configuration_directory }}"
     state: directory
 
-- name: configure redis
+- name: place initial redis configuration
   template:
-    src: redis.conf.j2
-    dest: "{{ redis_configuration_directory }}/redis.conf"
-  notify:
-    - restart redis
+    src: redis.conf-{{ ansible_distribution }}.j2
+    dest: "{{ redis_configuration_directory }}/{{ redis_configuration_file }}"
+    mode: "{{ redis_mode }}"
 
 - name: install redis
   package:
     name: "{{ redis_packages }}"
     state: "{{ redis_package_state }}"
 
-- name: configure redis again
+- name: configure redis
   template:
-    src: redis.conf.j2
-    dest: "{{ redis_configuration_directory }}/redis.conf"
+    src: redis.conf-{{ ansible_distribution }}.j2
+    dest: "{{ redis_configuration_directory }}/{{ redis_configuration_file }}"
+    owner: "{{ redis_owner }}"
+    group: "{{ redis_group }}"
+    mode: "{{ redis_mode }}"
   notify:
     - restart redis
 
