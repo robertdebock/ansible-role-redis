@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: redis-ubuntu-devel
     image: ubuntu:devel
+  - name: redis-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
