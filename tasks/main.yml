@@ -10,7 +10,7 @@
 
 - name: configure redis
   template:
-    src: redis.conf-{{ ansible_distribution }}.j2
+    src: "redis.conf-{{ ansible_distribution }}.j2"
     dest: "{{ redis_configuration_directory }}/{{ redis_configuration_file }}"
     owner: "{{ redis_owner }}"
     group: "{{ redis_group }}"
