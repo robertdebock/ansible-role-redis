@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: redis-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: redis-ubuntu-artful
-    image: ubuntu:artful
+  - name: redis-ubuntu-latest
+    image: ubuntu:latest
+  - name: redis-ubuntu-rolling
+    image: ubuntu:rolling
   - name: redis-ubuntu-devel
     image: ubuntu:devel
   - name: redis-ubuntu-latest
