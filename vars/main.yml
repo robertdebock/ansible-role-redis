@@ -15,14 +15,12 @@ _redis_configuration_directory:
   Debian: /etc/redis
   Ubuntu: /etc/redis
   openSUSE Leap: /etc/redis
-  openSUSE Tumbleweed: /etc/redis
 
 redis_configuration_directory: "{{ _redis_configuration_directory[ansible_distribution] | default(_redis_configuration_directory['default']) }}"
 
 _redis_configuration_file:
   default: redis.conf
   openSUSE Leap: default.conf
-  openSUSE Tumbleweed: default.conf
 
 redis_configuration_file: "{{ _redis_configuration_file[ansible_distribution] | default(_redis_configuration_file['default']) }}"
 
@@ -33,7 +31,6 @@ _redis_owner:
   CentOS: redis
   Debian: redis
   openSUSE Leap: root
-  openSUSE Tumbleweed: root
   Ubuntu: redis
 
 redis_owner: "{{ _redis_owner[ansible_distribution] | default(_redis_owner['default']) }}"
@@ -45,7 +42,6 @@ _redis_group:
   CentOS: root
   Debian: redis
   openSUSE Leap: redis
-  openSUSE Tumbleweed: redis
   Ubuntu: redis
 
 redis_group: "{{ _redis_group[ansible_distribution] | default(_redis_group['default']) }}"
@@ -57,7 +53,6 @@ _redis_mode:
   CentOS: "0640"
   Debian: "0640"
   openSUSE Leap: "0640"
-  openSUSE Tumbleweed: "0640"
   Ubuntu: "0640"
 
 redis_mode: "{{ _redis_mode[ansible_distribution] | default(_redis_mode['default']) }}"
@@ -66,7 +61,6 @@ _redis_service:
   default: redis
   Debian: redis-server
   openSUSE Leap: redis@default
-  openSUSE Tumbleweed: redis@default
   Ubuntu: redis-server
 
 redis_service: "{{ _redis_service[ansible_distribution] | default(_redis_service['default']) }}"
