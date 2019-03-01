@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: redis-opensuse-leap
     image: opensuse:leap
-  - name: redis-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: redis-ubuntu-latest
     image: ubuntu:latest
   - name: redis-ubuntu-rolling
