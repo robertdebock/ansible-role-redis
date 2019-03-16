@@ -3,7 +3,7 @@
 - name: install redis
   package:
     name: "{{ redis_packages }}"
-    state: "{{ redis_package_state }}"
+    state: present
   register: redis_install_redis
   until: redis_install_redis
   retries: 3
@@ -24,4 +24,4 @@
     state: started
     enabled: yes
   when:
-    - ansible_virtualization_type != "docker" or redis_ignore_docker
+    - ansible_virtualization_type != "docker"
