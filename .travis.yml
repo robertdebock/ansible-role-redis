@@ -26,10 +26,10 @@ env:
 
 matrix:
   allow_failures:
-    - env: distribution: "alpine:edge"
-    - env: distribution: "robertdebock/docker-debian-systemd:unstable"
-    - env: distribution: "robertdebock/docker-fedora-systemd:rawhide"
-    - env: distribution: "robertdebock/docker-ubuntu-systemd:devel"
+    - env: distribution="alpine:edge"
+    - env: distribution="robertdebock/docker-debian-systemd:unstable"
+    - env: distribution="robertdebock/docker-fedora-systemd:rawhide"
+    - env: distribution="robertdebock/docker-ubuntu-systemd:devel"
 
 cache:
   - pip
