@@ -89,20 +89,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|allow_failures|
 |---------|--------------|
-|alpine:latest|no|
-|alpine:edge|yes|
-|archlinux/base|no|
-|robertdebock/docker-centos-systemd:7|no|
-|robertdebock/docker-centos-systemd:latest|no|
-|robertdebock/docker-debian-systemd:latest|no|
-|robertdebock/docker-debian-systemd:stable|no|
-|robertdebock/docker-debian-systemd:unstable|yes|
-|robertdebock/docker-fedora-systemd:latest|no|
-|robertdebock/docker-fedora-systemd:rawhide|yes|
-|opensuse/leap|no|
-|robertdebock/docker-ubuntu-systemd:latest|no|
-|robertdebock/docker-ubuntu-systemd:devel|yes|
-|robertdebock/docker-ubuntu-systemd:rolling|no|
+||no|
 
 This role has been tested on these Ansible versions:
 
