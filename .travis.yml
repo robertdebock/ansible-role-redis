@@ -8,21 +8,23 @@ services:
   - docker
 
 env:
+  global:
+    - namespace="robertdebock"
   matrix:
-    - namespace="robertdebock" image="docker-alpine-openrc" tag="latest"
-    - namespace="robertdebock" image="docker-alpine-openrc" tag="edge"
+    - image="docker-alpine-openrc" tag="latest"
+    - image="docker-alpine-openrc" tag="edge"
     - namespace="archlinux" image="base"
-    - namespace="robertdebock" image="docker-centos-systemd" tag="7"
-    - namespace="robertdebock" image="docker-centos-systemd" tag="latest"
-    - namespace="robertdebock" image="docker-debian-systemd" tag="stable"
-    - namespace="robertdebock" image="docker-debian-systemd" tag="unstable"
-    - namespace="robertdebock" image="docker-debian-systemd" tag="latest"
-    - namespace="robertdebock" image="docker-fedora-systemd" tab="latest"
-    - namespace="robertdebock" image="docker-fedora-systemd" tag="rawhide"
+    - image="docker-centos-systemd" tag="7"
+    - image="docker-centos-systemd" tag="latest"
+    - image="docker-debian-systemd" tag="stable"
+    - image="docker-debian-systemd" tag="unstable"
+    - image="docker-debian-systemd" tag="latest"
+    - image="docker-fedora-systemd" tab="latest"
+    - image="docker-fedora-systemd" tag="rawhide"
     - namespace="opensuse" image="leap"
-    - namespace="robertdebock" image="docker-ubuntu-systemd" tab="stable"
-    - namespace="robertdebock" image="docker-ubuntu-systemd" tab="unstable"
-    - namespace="robertdebock" image="docker-ubuntu-systemd" tab="latest"
+    - image="docker-ubuntu-systemd" tab="stable"
+    - image="docker-ubuntu-systemd" tab="unstable"
+    - image="docker-ubuntu-systemd" tab="latest"
 
 matrix:
   allow_failures:
