@@ -9,11 +9,11 @@ services:
 
 env:
   global:
-    - namespace="robertdebock"
+    - namespace="robertdebock/"
   matrix:
     - image="docker-alpine-openrc"
     - image="docker-alpine-openrc" tag="edge"
-    - namespace="archlinux" image="base"
+    - namespace="archlinux/" image="base"
     - image="docker-centos-systemd" tag="7"
     - image="docker-centos-systemd"
     - image="docker-debian-systemd" tag="stable"
@@ -21,17 +21,17 @@ env:
     - image="docker-debian-systemd"
     - image="docker-fedora-systemd"
     - image="docker-fedora-systemd" tag="rawhide"
-    - namespace="opensuse" image="leap"
+    - namespace="opensuse/" image="leap"
     - image="docker-ubuntu-systemd" tag="stable"
     - image="docker-ubuntu-systemd" tag="unstable"
     - image="docker-ubuntu-systemd"
 
 matrix:
   allow_failures:
-    - env: namespace="robertdebock" image="docker-alpine-openrc" tag="edge"
-    - env: namespace="robertdebock" image="docker-debian-systemd" tag="unstable"
-    - env: namespace="robertdebock" image="docker-fedora-systemd" tag="rawhide"
-    - env: namespace="robertdebock" image="docker-ubuntu-systemd" tag="unstable"
+    - env: namespace="robertdebock/" image="docker-alpine-openrc" tag="edge"
+    - env: namespace="robertdebock/" image="docker-debian-systemd" tag="unstable"
+    - env: namespace="robertdebock/" image="docker-fedora-systemd" tag="rawhide"
+    - env: namespace="robertdebock/" image="docker-ubuntu-systemd" tag="unstable"
 
 cache:
   - pip
