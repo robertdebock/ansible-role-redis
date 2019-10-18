@@ -9,13 +9,27 @@ services:
 
 env:
   matrix:
-    - distribution="robertdebock/docker-alpine-openrc"
-    - distribution="archlinux/base"
-    - distribution="robertdebock/docker-centos-systemd"
-    - distribution="robertdebock/docker-debian-systemd"
-    - distribution="robertdebock/docker-fedora-systemd"
-    - distribution="opensuse/leap"
-    - distribution="robertdebock/docker-ubuntu-systemd"
+    - image="robertdebock/docker-alpine-openrc" tag="latest"
+    - image="robertdebock/docker-alpine-openrc" tag="edge"
+    - image="archlinux/base"
+    - image="robertdebock/docker-centos-systemd" tag="7"
+    - image="robertdebock/docker-centos-systemd" tag="latest"
+    - image="robertdebock/docker-debian-systemd" tag="stable"
+    - image="robertdebock/docker-debian-systemd" tag="unstable"
+    - image="robertdebock/docker-debian-systemd" tag="latest"
+    - image="robertdebock/docker-fedora-systemd" tab="latest"
+    - image="robertdebock/docker-fedora-systemd" tag="rawhide"
+    - image="opensuse/leap"
+    - image="robertdebock/docker-ubuntu-systemd" tab="stable"
+    - image="robertdebock/docker-ubuntu-systemd" tab="unstable"
+    - image="robertdebock/docker-ubuntu-systemd" tab="latest"
+
+matrix:
+  allow_failures:
+    - env: image="robertdebock/docker-alpine-openrc" tag="edge"
+    - env: image="robertdebock/docker-debian-systemd" tag="unstable"
+    - env: image="robertdebock/docker-fedora-systemd" tag="rawhide"
+    - env: image="robertdebock/docker-ubuntu-systemd" tab="unstable"
 
 cache:
   - pip
