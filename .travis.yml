@@ -39,6 +39,7 @@ install:
   - pip install tox
 
 script:
+  - echo $distribution
   - tox
 
 notifications:
