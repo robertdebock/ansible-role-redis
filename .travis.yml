@@ -8,7 +8,7 @@ services:
   - docker
 
 env:
-  jobs:
+  matrix:
     - distribution="robertdebock/docker-alpine-openrc:latest"
     - distribution="robertdebock/docker-alpine-openrc:edge"
     - distribution="archlinux/base"
@@ -24,7 +24,7 @@ env:
     - distribution="robertdebock/docker-ubuntu-systemd:devel"
     - distribution="robertdebock/docker-ubuntu-systemd:rolling"
 
-jobs:
+matrix:
   allow_failures:
     - env: distribution="alpine:edge"
     - env: distribution="robertdebock/docker-debian-systemd:unstable"
@@ -39,8 +39,7 @@ install:
   - pip install tox
 
 script:
-  - echo $distribution
-  - tox
+  - tox --parallel all
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
