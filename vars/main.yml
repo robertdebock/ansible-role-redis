@@ -24,7 +24,6 @@ redis_configuration_file: "{{ _redis_configuration_file[ansible_os_family] | def
 _redis_owner:
   default: redis
   Alpine: root
-  Archlinux: root
   Suse: root
 
 redis_owner: "{{ _redis_owner[ansible_os_family] | default(_redis_owner['default']) }}"
@@ -39,7 +38,6 @@ redis_group: "{{ _redis_group[ansible_os_family] | default(_redis_group['default
 _redis_mode:
   default: "0640"
   Alpine: "0644"
-  Archlinux: "0644"
 
 redis_mode: "{{ _redis_mode[ansible_os_family] | default(_redis_mode['default']) }}"
 
