@@ -2,9 +2,9 @@
 
 Install and configure redis on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-redis.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-redis)|[![github](https://github.com/robertdebock/ansible-role-redis/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-redis/actions)|[![quality](https://img.shields.io/ansible/quality/30211)](https://galaxy.ansible.com/robertdebock/redis)|[![downloads](https://img.shields.io/ansible/role/d/30211)](https://galaxy.ansible.com/robertdebock/redis)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-redis.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-redis)|[![github](https://github.com/robertdebock/ansible-role-redis/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-redis/actions)|[![quality](https://img.shields.io/ansible/quality/30211)](https://galaxy.ansible.com/robertdebock/redis)|[![downloads](https://img.shields.io/ansible/role/d/30211)](https://galaxy.ansible.com/robertdebock/redis)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-redis.svg)](https://github.com/robertdebock/ansible-role-redis/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -66,9 +66,9 @@ The following roles can be installed to ensure all requirements are met, using `
 
 ```yaml
 ---
+- robertdebock.apt_autostart
 - robertdebock.bootstrap
 - robertdebock.epel
-- robertdebock.apt_autostart
 
 ```
 
