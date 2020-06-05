@@ -36,8 +36,8 @@ _redis_group:
 redis_group: "{{ _redis_group[ansible_os_family] | default(_redis_group['default']) }}"
 
 _redis_mode:
-  default: "0640"
-  Alpine: "0644"
+  default: "640"
+  Alpine: "644"
 
 redis_mode: "{{ _redis_mode[ansible_os_family] | default(_redis_mode['default']) }}"
 
