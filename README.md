@@ -45,6 +45,22 @@ For verification `molecule/resources/verify.yml` run after the role has been app
   tasks:
     - name: check if connection still works
       ping:
+
+    - name: write my_key to redis
+      command: redis-cli set my_key my_value
+
+    - name: read my_key from redis
+      command: redis-cli get my_key
+      register: redis_read_my_key_from_redis
+
+    - name: show my_key
+      debug:
+        msg: "{{ redis_read_my_key_from_redis.stdout }}"
+
+    - name: check value of my_key
+      assert:
+        that:
+          - redis_read_my_key_from_redis.stdout == "my_value"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
