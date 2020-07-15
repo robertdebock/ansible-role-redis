@@ -32,6 +32,14 @@ The machine may need to be prepared using `molecule/resources/prepare.yml`:
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.apt_autostart
+    - role: robertdebock.sysctl
+      sysctl_items:
+        - name: vm.overcommit_memory
+          value: 1
+    - role: robertdebock.grub
+      grub_options:
+        - option: transparent_hugepage
+          value: never
 ```
 
 For verification `molecule/resources/verify.yml` run after the role has been applied.
@@ -78,6 +86,8 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.apt_autostart
 - robertdebock.bootstrap
 - robertdebock.epel
+- robertdebock.sysctl
+- robertdebock.grub
 
 ```
 

@@ -2,3 +2,5 @@
 - robertdebock.apt_autostart
 - robertdebock.bootstrap
 - robertdebock.epel
+- robertdebock.sysctl
+- robertdebock.grub
