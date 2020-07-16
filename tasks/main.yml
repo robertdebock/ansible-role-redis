@@ -4,9 +4,6 @@
   package:
     name: "{{ redis_packages }}"
     state: present
-  register: redis_install_redis
-  until: redis_install_redis is succeeded
-  retries: 3
 
 - name: configure redis
   template:
