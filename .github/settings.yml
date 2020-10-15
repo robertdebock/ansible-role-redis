@@ -5,3 +5,4 @@
 repository:
   description: Install and configure redis on your system.
   homepage: https://robertdebock.nl/
+  topics: redis, server, system, ansible, molecule, tox, playbook, hacktoberfest
