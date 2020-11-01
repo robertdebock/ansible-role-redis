@@ -1,6 +1,7 @@
 ---
-- robertdebock.apt_autostart
-- robertdebock.bootstrap
-- robertdebock.epel
-- robertdebock.sysctl
-- robertdebock.grub
+roles:
+  - name: robertdebock.apt_autostart
+  - name: robertdebock.bootstrap
+  - name: robertdebock.epel
+  - name: robertdebock.sysctl
+  - name: robertdebock.grub
