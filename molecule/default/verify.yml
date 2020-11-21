@@ -5,21 +5,11 @@
   gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ping:
-
     - name: write my_key to redis
       command: redis-cli set my_key my_value
 
     - name: read my_key from redis
       command: redis-cli get my_key
       register: redis_read_my_key_from_redis
-
-    - name: show my_key
-      debug:
-        msg: "{{ redis_read_my_key_from_redis.stdout }}"
-
-    - name: check value of my_key
-      assert:
-        that:
-          - redis_read_my_key_from_redis.stdout == "my_value"
+      failed_when:
+        - redis_read_my_key_from_redis.stdout != "my_value"
