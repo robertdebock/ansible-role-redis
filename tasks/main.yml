@@ -1,5 +1,6 @@
 ---
 # tasks file for redis
+
 - name: install redis
   package:
     name: "{{ redis_packages }}"
