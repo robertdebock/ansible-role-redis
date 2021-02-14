@@ -2,7 +2,7 @@
 # handlers file for redis
 
 - name: restart redis
-  service:
+  ansible.builtin.service:
     name: "{{ redis_service }}"
     state: restarted
   when:
