@@ -11,7 +11,7 @@
     src: "redis.conf-{{ ansible_distribution }}.j2"
     dest: "{{ redis_configuration_directory }}/{{ redis_configuration_file }}"
     owner: "{{ redis_owner }}"
-    ansible.builtin.group: "{{ redis_group }}"
+    group: "{{ redis_group }}"
     mode: "{{ redis_mode }}"
   notify:
     - restart redis
