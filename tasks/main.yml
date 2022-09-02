@@ -6,16 +6,6 @@
     name: "{{ redis_packages }}"
     state: present
 
-- name: configure redis
-  ansible.builtin.template:
-    src: "redis.conf-{{ ansible_distribution }}.j2"
-    dest: "{{ redis_configuration_directory }}/{{ redis_configuration_file }}"
-    owner: "{{ redis_owner }}"
-    group: "{{ redis_group }}"
-    mode: "{{ redis_mode }}"
-  notify:
-    - restart redis
-
 - name: start and enable redis
   ansible.builtin.service:
     name: "{{ redis_service }}"
