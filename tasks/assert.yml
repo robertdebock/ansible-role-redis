@@ -1,6 +1,6 @@
 ---
 
-- name: test if redis_bind_address is set correctly
+- name: Test if redis_bind_address is set correctly
   ansible.builtin.assert:
     that:
       - redis_bind_address is defined
