@@ -46,6 +46,16 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
+## [Role Variables](#role-variables)
+
+The default values for the variables are set in `defaults/main.yml`:
+
+```yaml
+---
+# defaults file for redis
+
+redis_bind_address: "127.0.0.1"
+```
 
 ## [Requirements](#requirements)
 
