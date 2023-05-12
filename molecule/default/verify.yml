@@ -5,11 +5,11 @@
   gather_facts: no
 
   tasks:
-    - name: write my_key to redis
+    - name: Write my_key to redis
       ansible.builtin.command:
         cmd: redis-cli set my_key my_value
 
-    - name: read my_key from redis
+    - name: Read my_key from redis
       ansible.builtin.command:
         cmd: redis-cli get my_key
       register: redis_read_my_key_from_redis
