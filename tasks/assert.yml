@@ -5,4 +5,5 @@
     that:
       - redis_bind_address is defined
       - redis_bind_address is string
+      - redis_bind_address is not none
     quiet: yes
