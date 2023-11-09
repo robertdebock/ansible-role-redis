@@ -2,9 +2,9 @@
 
 Install and configure redis on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-redis/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-redis/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-redis/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-redis)|[![quality](https://img.shields.io/ansible/quality/30211)](https://galaxy.ansible.com/robertdebock/redis)|[![downloads](https://img.shields.io/ansible/role/d/30211)](https://galaxy.ansible.com/robertdebock/redis)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-redis.svg)](https://github.com/robertdebock/ansible-role-redis/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-redis/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-redis/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-redis/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-redis)|[![downloads](https://img.shields.io/ansible/role/d/24575)](https://galaxy.ansible.com/robertdebock/redis)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-redis.svg)](https://github.com/robertdebock/ansible-role-redis/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -99,7 +99,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-redis/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-redis/issues).
 
 ## [License](#license)
 
