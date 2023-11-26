@@ -1,4 +1,4 @@
-# Ansible role [redis](#redis)
+# [Ansible role redis](#redis)
 
 Install and configure redis on your system.
 
