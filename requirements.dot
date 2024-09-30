@@ -1,0 +1,17 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "redis" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.apt_autostart" [fillcolor=green style=filled]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.epel" [fillcolor=green style=filled]
+    "robertdebock.sysctl" [fillcolor=green style=filled]
+    "robertdebock.grub" [fillcolor=green style=filled]
+  }
+  "redis" -> "robertdebock.apt_autostart"
+  "redis" -> "robertdebock.bootstrap"
+  "redis" -> "robertdebock.epel"
+  "redis" -> "robertdebock.sysctl"
+  "redis" -> "robertdebock.grub"
+}
