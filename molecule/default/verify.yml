@@ -2,16 +2,27 @@
 - name: Verify
   hosts: all
   become: true
-  gather_facts: false
+  gather_facts: true
+
+  vars:
+    _redis_cli:
+      default: redis-cli
+      Fedora: valkey-cli
+
+    redis_cli: "{{ _redis_cli[ansible_distribution] | default(_redis_cli['default']) }}"
 
   tasks:
-    - name: Write my_key to redis
+    # Testing Redis/Valkey functionality - using command module for CLI testing
+    - name: Write my_key to redis/valkey
       ansible.builtin.command:
-        cmd: redis-cli set my_key my_value
+        cmd: "{{ redis_cli }} set my_key my_value"
+      changed_when: false
 
-    - name: Read my_key from redis
+    # Testing Redis/Valkey functionality - using command module for CLI testing
+    - name: Read my_key from redis/valkey
       ansible.builtin.command:
-        cmd: redis-cli get my_key
+        cmd: "{{ redis_cli }} get my_key"
       register: redis_read_my_key_from_redis
+      changed_when: false
       failed_when:
         - redis_read_my_key_from_redis.stdout != "my_value"
