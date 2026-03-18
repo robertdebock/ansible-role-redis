@@ -12,8 +12,8 @@
     name: redis
     state: enabled
   when:
-    - ansible_os_family == "RedHat"
-    - ansible_distribution_major_version == "8"
+    - ansible_facts['os_family'] == "RedHat"
+    - ansible_facts['distribution_major_version'] == "8"
 
 - name: Install redis
   ansible.builtin.package:
@@ -22,7 +22,7 @@
 
 - name: Configure redis
   ansible.builtin.template:
-    src: "redis.conf-{{ ansible_distribution }}.j2"
+    src: "redis.conf-{{ ansible_facts['distribution'] }}.j2"
     dest: "{{ redis_configuration_directory }}/{{ redis_configuration_file }}"
     owner: "{{ redis_owner }}"
     group: "{{ redis_group }}"

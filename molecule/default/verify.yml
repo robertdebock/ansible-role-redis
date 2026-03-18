@@ -9,7 +9,7 @@
       default: redis-cli
       Fedora: valkey-cli
 
-    redis_cli: "{{ _redis_cli[ansible_distribution] | default(_redis_cli['default']) }}"
+    redis_cli: "{{ _redis_cli[ansible_facts['distribution']] | default(_redis_cli['default']) }}"
 
   tasks:
     # Testing Redis/Valkey functionality - using command module for CLI testing
